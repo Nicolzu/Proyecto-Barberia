@@ -35,3 +35,21 @@ body{
     border-radius:5px;
     font-weight:bold;
 }
+.cards{
+    display:flex;
+    flex-wrap:wrap;
+    gap:1rem;
+}
+
+.tarjeta{
+    width:100%;
+    background:white;
+    border-radius:8px;
+    box-shadow:0 2px 6px rgba(0,0,0,.1);
+    overflow:hidden;
+}
+
+.tarjeta img{
+    width:100%;
+    display:block;
+}
