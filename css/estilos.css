@@ -53,3 +53,19 @@ body{
     width:100%;
     display:block;
 }
+
+@media(min-width:701px){
+
+    .tarjeta{
+        width:calc(50% - .5rem);
+    }
+
+}
+
+@media(min-width:991px){
+
+    .tarjeta{
+        width:calc(33.33% - .67rem);
+    }
+
+}
