@@ -127,7 +127,7 @@
 
             </div>
 
-            <div class="item activo">
+            <div class="item ">
 
                 <button class="titulo">
                     ¿Aceptan tarjeta?

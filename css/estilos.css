@@ -14,7 +14,7 @@ body{
 /* Variables */
 
 :root{
-    --color-principal:#c79a2c;
+    --color-principal:#1e54b9;
     --color-texto:#222;
     --ancho-max:1140px;
 }
@@ -90,9 +90,10 @@ body{
     background-color:var(--color-principal);
     color:white;
 }
-
+/* titulo golden barbershop */
 .portada h1{
     margin:0 0 1rem;
+     color: white;
 }
 
 .boton{
@@ -242,9 +243,10 @@ textarea{
     .hamburguesa{
     margin-left:auto;
 }
- /*   .hamburguesa{ */
-     /*   display:none; */
-  /* } */
+
+   .hamburguesa{ 
+       display:none; 
+   }
 
     .tarjeta{
         width:calc(33.33% - .67rem);
