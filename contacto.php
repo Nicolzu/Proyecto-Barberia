@@ -1,35 +1,28 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Golden Barber Shop</title>
-    <link rel="stylesheet" href="./css/estilos.css">
-</head>
-<body>
+<?php include("header.php"); ?>
 
-<header class="header">
+<?php
 
-    <a href="index.html" class="logo">
-        Golden Barber
-    </a>
+$mensaje = "";
 
-    <button class="hamburguesa" id="btnMenu">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
+if($_SERVER["REQUEST_METHOD"] == "POST"){
 
-    <nav class="menu">
-        <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="nosotros.html">Nosotros</a></li>
-            <li><a href="servicios.html">Servicios</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-        </ul>
-    </nav>
+    $nombre = trim($_POST["nombre"]);
+    $correo = trim($_POST["correo"]);
+    $texto = trim($_POST["mensaje"]);
 
-</header>
+    if($nombre != "" && $correo != "" && $texto != ""){
+
+        $mensaje = "Formulario enviado correctamente.";
+
+    }else{
+
+        $mensaje = "Debe completar todos los campos.";
+
+    }
+
+}
+
+?>
 
 <main class="contenedor">
 
@@ -39,7 +32,7 @@
         Ponte en contacto con nosotros para reservar tu cita.
     </p>
 
-    <form>
+    <form method="POST">
 
         <label for="nombre">Nombre:</label>
         <input type="text" id="nombre" name="nombre" required>
@@ -56,49 +49,14 @@
 
     </form>
 
+    <?php if($mensaje != ""){ ?>
+
+        <p>
+            <?php echo $mensaje; ?>
+        </p>
+
+    <?php } ?>
+
 </main>
 
-<footer class="footer">
-
-    <div>
-
-        <p>
-            <strong>Golden Barber Shop</strong>
-        </p>
-
-        <p>
-            Teléfono: 62649004
-        </p>
-
-        <p>
-            Correo: info@goldenbarber.com
-        </p>
-
-    </div>
-
-    <ul class="redes">
-
-        <li>
-            <a href="https://www.facebook.com/" target="_blank">
-                Facebook
-            </a>
-        </li>
-
-        <li>
-            <a href="https://www.instagram.com/" target="_blank">
-                Instagram
-            </a>
-        </li>
-
-    </ul>
-
-    <p>
-        &copy; 2026 Golden Barber Shop
-    </p>
-
-</footer>
-
-<script src="./js/main.js"></script>
-
-</body>
-</html>
+<?php include("footer.php"); ?>

@@ -1,24 +1,28 @@
-// MENU HAMB
+// MENU HAMBURGUESA
 
 const btnMenu = document.getElementById("btnMenu");
 const menu = document.querySelector(".menu");
 
-btnMenu.addEventListener("click", function () {
+if (btnMenu && menu) {
 
-    if (menu.style.display === "block") {
+    btnMenu.addEventListener("click", function () {
 
-        menu.style.display = "none";
+        if (menu.style.display === "block") {
 
-    } else {
+            menu.style.display = "none";
 
-        menu.style.display = "block";
+        } else {
 
-    }
+            menu.style.display = "block";
 
-});
+        }
+
+    });
+
+}
 
 
-
+// ACCORDION
 
 const titulos = document.querySelectorAll(".titulo");
 
@@ -33,3 +37,43 @@ titulos.forEach(function (titulo) {
     });
 
 });
+
+
+// VALIDACION FORMULARIO
+
+const formulario = document.querySelector("form");
+
+if (formulario) {
+
+    formulario.addEventListener("submit", function (e) {
+
+        const nombre = document.getElementById("nombre").value.trim();
+        const correo = document.getElementById("correo").value.trim();
+        const mensaje = document.getElementById("mensaje").value.trim();
+
+        if (nombre.length < 3) {
+
+            alert("El nombre debe tener al menos 3 caracteres");
+            e.preventDefault();
+            return;
+
+        }
+
+        if (correo === "") {
+
+            alert("Debe ingresar un correo");
+            e.preventDefault();
+            return;
+
+        }
+
+        if (mensaje.length < 5) {
+
+            alert("El mensaje es demasiado corto");
+            e.preventDefault();
+
+        }
+
+    });
+
+}

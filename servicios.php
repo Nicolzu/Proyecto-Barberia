@@ -1,29 +1,47 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Golden Barber Shop</title>
-    <link rel="stylesheet" href="./css/estilos.css">
-</head>
-<body>
+<?php include("header.php"); ?>
 
-<header class="header">
+<?php
 
-    <a href="index.html" class="logo">
-        Golden Barber
-    </a>
+$servicios = [
 
-    <nav class="menu">
-        <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="nosotros.html">Nosotros</a></li>
-            <li><a href="servicios.html">Servicios</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-        </ul>
-    </nav>
+    [
+        "nombre" => "Corte Clásico",
+        "descripcion" => "Estilo tradicional."
+    ],
 
-</header>
+    [
+        "nombre" => "Corte Moderno",
+        "descripcion" => "Cortes actuales adaptados a tu estilo."
+    ],
+
+    [
+        "nombre" => "Fade Profesional",
+        "descripcion" => "Degradados precisos y modernos."
+    ],
+
+    [
+        "nombre" => "Perfilado de Barba",
+        "descripcion" => "Diseño y cuidado profesional."
+    ],
+
+    [
+        "nombre" => "Afeitado Premium",
+        "descripcion" => "Afeitado tradicional."
+    ],
+
+    [
+        "nombre" => "Combo Completo",
+        "descripcion" => "Corte, cejas y barba."
+    ],
+
+    [
+        "nombre" => "Perfilado de Cejas",
+        "descripcion" => "Diseño y cuidado profesional."
+    ]
+
+];
+
+?>
 
 <main class="contenedor">
 
@@ -31,85 +49,24 @@
 
     <div class="cards">
 
-        <article class="tarjeta">
-            <h3>Corte Clásico</h3>
-            <p>Estilo tradicional</p>
-        </article>
+        <?php foreach($servicios as $servicio){ ?>
 
-        <article class="tarjeta">
-            <h3>Corte Moderno</h3>
-            <p>Cortes actuales adaptados a tu estilo.</p>
-        </article>
+            <article class="tarjeta">
 
-        <article class="tarjeta">
-            <h3>Fade Profesional</h3>
-            <p>Degradados precisos y modernos.</p>
-        </article>
+                <h3>
+                    <?php echo $servicio["nombre"]; ?>
+                </h3>
 
-        <article class="tarjeta">
-            <h3>Perfilado de Barba</h3>
-            <p>Diseño y cuidado profesional de barba.</p>
-        </article>
+                <p>
+                    <?php echo $servicio["descripcion"]; ?>
+                </p>
 
-        <article class="tarjeta">
-            <h3>Afeitado Premium</h3>
-            <p>Afeitado tradicional .</p>
-        </article>
+            </article>
 
-        <article class="tarjeta">
-            <h3>Combo Completo</h3>
-            <p>Corte, perfilado de cejas y barba .</p>
-        </article>
+        <?php } ?>
 
-        <article class="tarjeta">
-            <h3>Perfilado de cejas</h3>
-            <p>Diseño y cuidado profesional de cejas.</p>
-        </article>
     </div>
 
 </main>
 
-
-<footer class="footer">
-
-    <div>
-
-        <p>
-            <strong>Golden Barber Shop</strong>
-        </p>
-
-        <p>
-            Teléfono: 62649004
-        </p>
-
-        <p>
-            Correo: info@goldenbarber.com
-        </p>
-
-    </div>
-
-    <ul class="redes">
-
-        <li>
-            <a href="https://www.facebook.com/" target="_blank">
-                Facebook
-            </a>
-        </li>
-
-        <li>
-            <a href="https://www.instagram.com/" target="_blank">
-                Instagram
-            </a>
-        </li>
-
-    </ul>
-
-    <p>
-        &copy; 2026 Golden Barber Shop
-    </p>
-
-</footer>
-
-<script src="./js/main.js"></script>
-</body>
-</html>
+<?php include("footer.php"); ?>
